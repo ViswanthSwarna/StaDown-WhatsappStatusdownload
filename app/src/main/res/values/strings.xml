@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">StaDown</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_saved_stories">Saved Stories</string>
+    <string name="title_activity_recent_stories">Recent Stories</string>
+    <string name="tab_image">Images</string>
+    <string name="tab_video">Videos</string>
+    <string name="share_using">Share using</string>
+    <string name="story_saved">Story Saved</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="saving_failed">Saving Failed</string>
+    <string name="about">About</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="rate_now">Rate now</string>
+    <string name="rate_request_statement">Enjoying StatDowny! Take a moment rate us on playstore.</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="help">Help</string>
+    <string name="empty_statement">Sorry, No stories found</string>
+    <string name="license">License</string>
+    <string name="license_info">License-info</string>
+    <string name="glide">Glide :</string>
+    <string name="photoview">PhotoView :</string>
+    <string name="libraries_used">Libraries Used</string>
+    <string name="send_us_mail">Mail Us</string>
+    <string name="need_help">Need Help?</string>
+    <string name="help_note">Note: You can\'t download stories before watching them in Whatsapp</string>
+    <string name="if_not_permitted">External storage permission is needed</string>
+    <string name="imageviewer_error">Oops, Some error occurred</string>
+    <string name="never_ask_again">Never ask again</string>
+
+
+    <string name="adunitid">ca-app-pub-3940256099942544/6300978111</string>
+
+</resources>
