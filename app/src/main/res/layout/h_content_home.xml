@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.viswanth.whatsappstatusdownload.activity.HomeActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.viswanth.whatsappstatusdownload.activity.HomeActivity"
     tools:showIn="@layout/h_app_bar_home">
 
 
@@ -32,9 +32,8 @@
         android:text="@string/title_activity_recent_stories"
         app:layout_constraintBottom_toTopOf="@+id/buttonSavedStories"
         app:layout_constraintEnd_toEndOf="@+id/buttonSavedStories"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/buttonSavedStories"
-        app:layout_constraintTop_toBottomOf="@+id/homeAdviewtop" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -42,38 +41,14 @@
         style="@style/mybutton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:onClick="onHowItWorks"
         android:text="@string/help"
-        app:layout_constraintBottom_toTopOf="@+id/homeAdviewbottom"
-        app:layout_constraintEnd_toEndOf="@+id/homeAdviewbottom"
-        app:layout_constraintStart_toStartOf="@+id/homeAdviewbottom"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSavedStories" />
-
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/homeAdviewbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/adunitid"
-        ads:layout_constraintHorizontal_bias="0.5"
-        ads:layout_constraintTop_toBottomOf="@+id/guideButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/homeAdviewtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/adunitid"
-        ads:layout_constraintBottom_toTopOf="@+id/homeRecentStories"
-        ads:layout_constraintEnd_toEndOf="@+id/homeRecentStories"
-        ads:layout_constraintStart_toStartOf="@+id/homeRecentStories"
-        ads:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSavedStories" />
 
 
 </android.support.constraint.ConstraintLayout>

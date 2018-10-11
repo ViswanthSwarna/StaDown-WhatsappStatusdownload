@@ -10,21 +10,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.viswanth.whatsappstatusdownload.R;
 import com.viswanth.whatsappstatusdownload.data.FilesData;
 import com.viswanth.whatsappstatusdownload.fragments.ImageFragment;
 import com.viswanth.whatsappstatusdownload.fragments.VideoFragment;
-import com.viswanth.whatsappstatusdownload.justtheirbecauserequired.StatusDownloaderAnalytics;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StoriesActivity extends AppCompatActivity {
-
-
-    private Tracker mTracker;
 
 
 
@@ -66,21 +60,8 @@ public class StoriesActivity extends AppCompatActivity {
 
 
 
-        //analytics
-        StatusDownloaderAnalytics application = (StatusDownloaderAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
-
 
     }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mTracker.setScreenName("StoriesActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-    }
-
 
 
 

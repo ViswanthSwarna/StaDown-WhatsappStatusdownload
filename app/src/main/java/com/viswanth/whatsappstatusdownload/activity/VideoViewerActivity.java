@@ -7,11 +7,8 @@ import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.viswanth.whatsappstatusdownload.R;
 import com.viswanth.whatsappstatusdownload.data.FilesData;
-import com.viswanth.whatsappstatusdownload.justtheirbecauserequired.StatusDownloaderAnalytics;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,7 +17,6 @@ public class VideoViewerActivity extends AppCompatActivity {
 
     int position;
     private static ArrayList<File> videos;
-    private Tracker mTracker;
 
 
 
@@ -90,19 +86,10 @@ public class VideoViewerActivity extends AppCompatActivity {
             }
         } );
 
-        //analytics
-        StatusDownloaderAnalytics application = (StatusDownloaderAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
+
 
     }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mTracker.setScreenName("VideoViewActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-    }
 
 
 }

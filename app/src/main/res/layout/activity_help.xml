@@ -26,18 +26,6 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewhelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/adunitid"
-        ads:layout_constraintHorizontal_bias="0.5"
-        ads:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -68,12 +56,11 @@
         android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="@string/help_note"
         android:textColor="@color/cd"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/adViewhelp"
-        app:layout_constraintEnd_toEndOf="@+id/adViewhelp"
-        app:layout_constraintStart_toStartOf="@+id/adViewhelp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonmail" />
 
 </android.support.constraint.ConstraintLayout>

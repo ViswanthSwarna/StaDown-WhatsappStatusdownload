@@ -31,14 +31,8 @@ import android.widget.CheckBox;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.viswanth.whatsappstatusdownload.R;
 import com.viswanth.whatsappstatusdownload.data.FilesData;
-import com.viswanth.whatsappstatusdownload.justtheirbecauserequired.StatusDownloaderAnalytics;
 
 
 public class HomeActivity extends AppCompatActivity
@@ -49,8 +43,6 @@ public class HomeActivity extends AppCompatActivity
 
     //pressedButtonId = 1 for recent stories
     //pressedButtonId = 2 for saved stories
-
-    private Tracker mTracker;
 
 
 
@@ -79,31 +71,11 @@ public class HomeActivity extends AppCompatActivity
         }
 
 
-        //ad
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
-        AdView adViewTop = findViewById(R.id.homeAdviewtop);
-        AdView adViewBottom = findViewById(R.id.homeAdviewbottom);
-        AdRequest adRequestTop = new AdRequest.Builder().build();
-        adViewTop.loadAd(adRequestTop);
-        AdRequest adRequestBottom = new AdRequest.Builder().build();
-        adViewBottom.loadAd(adRequestBottom);
-
-        //analytics
-        StatusDownloaderAnalytics application = (StatusDownloaderAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
-
-
 
 
     }
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mTracker.setScreenName("HomeActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-    }
 
     @Override
     public void onBackPressed() {
@@ -234,10 +206,6 @@ public class HomeActivity extends AppCompatActivity
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent,getString(R.string.share_using)));
 
-        mTracker.send(new HitBuilders.EventBuilder()
-                .setCategory("Action")
-                .setAction("Share")
-                .build());
 
 
 
@@ -332,10 +300,6 @@ public class HomeActivity extends AppCompatActivity
                     Uri.parse("https://play.google.com/store/apps/details?id="+getApplicationContext().getPackageName())));
         }
 
-        mTracker.send(new HitBuilders.EventBuilder()
-                .setCategory("Action")
-                .setAction("Rate")
-                .build());
 
 
     }

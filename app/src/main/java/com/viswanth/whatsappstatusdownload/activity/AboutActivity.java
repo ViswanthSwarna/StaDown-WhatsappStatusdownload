@@ -7,17 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.plus.PlusOneButton;
 import com.viswanth.whatsappstatusdownload.R;
-import com.viswanth.whatsappstatusdownload.justtheirbecauserequired.StatusDownloaderAnalytics;
 
 public class AboutActivity extends AppCompatActivity {
 
     private PlusOneButton mPlusOneButton;
     private static final int PLUS_ONE_REQUEST_CODE = 0;
-    private Tracker mTracker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,22 +56,6 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
-        //analytics
-        StatusDownloaderAnalytics application = (StatusDownloaderAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
-
-        mPlusOneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mTracker.send(new HitBuilders.EventBuilder()
-                        .setCategory("Action")
-                        .setAction("Plus One")
-                        .build());
-
-            }
-        });
-
-
 
 
     }
@@ -82,8 +63,6 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mTracker.setScreenName("AboutActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         mPlusOneButton.initialize("https://play.google.com/store/apps/details?id="+getApplicationContext().getPackageName(), PLUS_ONE_REQUEST_CODE);
 
 

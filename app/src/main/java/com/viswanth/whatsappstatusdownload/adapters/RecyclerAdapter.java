@@ -30,8 +30,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
      private ArrayList<File>mDataset =  new ArrayList<>();
      private Context mContext;
      private char contentType;
-     private final static int AD_TYPE = 143,CONTENT_TYPE=123;
-
 
 
 
@@ -57,7 +55,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         if( mDataset != null && !mDataset.isEmpty()){
 
-            if(viewType == CONTENT_TYPE) {
 
 
                 if (contentType == 'i') {
@@ -73,14 +70,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
                 }
 
-
-            }else{
-
-                v = (CardView)LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.native_ad_item,parent,false);
-
-
-            }
         }else{
 
             v = (CardView) LayoutInflater.from(parent.getContext())
@@ -102,7 +91,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         if(!mDataset.isEmpty()) {
 
-            if(getItemViewType(position) == CONTENT_TYPE){
 
                 final int ourPosition = (position)-((position +1)/3);
 
@@ -234,28 +222,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 
 
-            }else{
 
-                AdRequest adRequest = new AdRequest.Builder().build();
-                holder.adView.loadAd(adRequest);
-
-
-
-            }
 
         }
         }
     }
 
-
-    @Override
-    public int getItemViewType(int position)
-    {
-        if ((position+1) % 3 == 0){
-            return AD_TYPE;}
-        else {
-            return CONTENT_TYPE;
-        }}
 
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -288,7 +260,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         private ImageView mImageView;
         private Button shareButton, saveOrDelete;
-        private AdView adView;
 
 
 
@@ -298,7 +269,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             mImageView =  v.findViewById(R.id.vvr);
             shareButton =  v.findViewById(R.id.sharefilebutton);
             saveOrDelete =  v.findViewById(R.id.saveORdelete);
-            adView =  v.findViewById(R.id.adviewlist);
 
         }
 

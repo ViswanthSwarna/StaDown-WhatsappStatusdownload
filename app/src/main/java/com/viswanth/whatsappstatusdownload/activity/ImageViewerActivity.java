@@ -7,16 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.viswanth.whatsappstatusdownload.R;
-import com.viswanth.whatsappstatusdownload.justtheirbecauserequired.StatusDownloaderAnalytics;
 
 public class ImageViewerActivity extends AppCompatActivity {
 
     String path;
     PhotoView mPhotoView;
-    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +37,10 @@ public class ImageViewerActivity extends AppCompatActivity {
 
 
 
-        //analytics
-        StatusDownloaderAnalytics application = (StatusDownloaderAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
-
 
     }
 
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mTracker.setScreenName("ImageViewActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-    }
 
 
     @Override
