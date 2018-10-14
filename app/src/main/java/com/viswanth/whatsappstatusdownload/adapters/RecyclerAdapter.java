@@ -92,7 +92,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         if(!mDataset.isEmpty()) {
 
 
-                final int ourPosition = (position)-((position +1)/3);
+                final int ourPosition = (position);
 
             if (contentType == 'i') {
 
@@ -239,7 +239,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
             return 1;
         }else {
-        return (mDataset.size()+(mDataset.size()/2));
+        return (mDataset.size());
         }
         }else{
         return 0;}
